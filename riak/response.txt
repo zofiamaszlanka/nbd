@@ -1,0 +1,147 @@
+-----------1-------------------------
+TP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 27 Jun 2021 19:11:23 GMT
+Content-Type: application/json
+Content-Length: 0
+
+TP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 27 Jun 2021 19:12:19 GMT
+Content-Type: application/json
+Content-Length: 0
+
+TP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 27 Jun 2021 19:12:52 GMT
+Content-Type: application/json
+Content-Length: 0
+
+TP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 27 Jun 2021 19:13:15 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
+TP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 27 Jun 2021 19:13:36 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
+-----------2-------------------------
+TP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8J9gnVioxWvBChBKZ8lgZoj19b/FlAQA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s22555>; rel="up"
+Last-Modified: Sun, 27 Jun 2021 19:11:23 GMT
+ETag: "3I8EBMk4hz1F07E1um53h2"
+Date: Sun, 27 Jun 2021 19:14:09 GMT
+Content-Type: application/json
+Content-Length: 85
+
+{"country": "Russia", "capital": "Moscow", "population": 146171015, "area": 17098246}
+
+
+-----------3-------------------------
+TP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 27 Jun 2021 19:14:47 GMT
+Content-Type: application/json
+Content-Length: 0
+
+// {"country": "Russia", "capital": "Moscow", "population": 146171015, "area": 17098246, currency: RUB}
+
+
+-----------4-------------------------
+TP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 27 Jun 2021 19:16:04 GMT
+Content-Type: application/json
+Content-Length: 0
+
+// {"country": "Canada", "capital": "Ottawa", "population": 38048738}
+
+
+-----------5-------------------------
+TP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 27 Jun 2021 19:16:53 GMT
+Content-Type: application/json
+Content-Length: 0
+
+// {"country": "United States of America", "capital": "Waszyngton", "population": 331449281, "area": 3796742}
+
+
+-----------6-------------------------
+TP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 27 Jun 2021 19:18:01 GMT
+Content-Type: application/json
+Content-Length: 0
+
+-----------7-------------------------
+TP/1.1 404 Object Not Found
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 27 Jun 2021 19:18:21 GMT
+Content-Type: text/plain
+Content-Length: 10
+
+not found
+
+-----------8-------------------------
+TP/1.1 201 Created
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Location: /buckets/s22555/keys/Fz6DPoMcgMduxVN6MgtvEvWVqP7
+Date: Sun, 27 Jun 2021 19:18:51 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
+
+-----------9-------------------------
+TP/1.1 200 OK
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 27 Jun 2021 19:22:15 GMT
+Content-Type: application/json
+Content-Length: 72
+
+{"keys":["usa","brazil","china","canada","Fz6DPoMcgMduxVN6MgtvEvWVqP7"]}
+
+
+
+TP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8J9gnVioxK3hAhBIZ81gZpL19b/FlAQA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s22555>; rel="up"
+Last-Modified: Sun, 27 Jun 2021 19:18:51 GMT
+ETag: "7hsxiC483oFfeJyFcZPEUS"
+Date: Sun, 27 Jun 2021 19:20:05 GMT
+Content-Type: application/json
+Content-Length: 22
+
+{ "country": "Poland"}
+
+-----------10-------------------------
+TP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 27 Jun 2021 19:22:33 GMT
+Content-Type: application/json
+Content-Length: 0
+

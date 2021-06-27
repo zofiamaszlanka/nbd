@@ -1,0 +1,57 @@
+--------------------1---------------------------------------
+
+curl --ipv4 -i -XPUT -H "Content-Type: application/json" -d '{"country": "Russia", "capital": "Moscow", "population": 146171015, "area": 17098246}' http://localhost:8098/buckets/s22555/keys/russia
+
+curl --ipv4 -i -XPUT -H "Content-Type: application/json" -d '{"country": "Canada", "capital": "Ottawa", "population": 38048738, "area": 9984670}' http://localhost:8098/buckets/s22555/keys/canada
+
+curl --ipv4 -i -XPUT -H "Content-Type: application/json" -d '{"country": "United States of America", "capital": "Washington", "population": 331449281, "area": 3796742}' http://localhost:8098/buckets/s22555/keys/usa
+
+curl --ipv4 -i -XPUT -H "Content-Type: application/json" -d '{"country": "China", "capital": "Shanghai", "population": 1444390177, "area": 9596961}' http://localhost:8098/buckets/s22555/keys/china
+
+curl --ipv4 -i -XPUT -H "Content-Type: application/json" -d '{"country": "Brazil", "capital": "Brasilia", "population":210147125, "area": 8515767}' http://localhost:8098/buckets/s22555/keys/brazil
+
+
+--------------------2---------------------------------------
+
+curl -i -XGET http://localhost:8098/buckets/s22555/keys/russia
+
+
+--------------------3---------------------------------------
+
+curl --ipv4 -i -XPUT -H "Content-Type: application/json" -d '{"country": "Russia", "capital": "Moscow", "population": 146171015, "area": 17098246, “currency”: “RUB”}' http://localhost:8098/buckets/s22555/keys/russia
+
+
+--------------------4---------------------------------------
+
+curl --ipv4 -i -XPUT -H "Content-Type: application/json" -d '{"country": "Canada", "capital": "Ottawa", "population": 38048738}' http://localhost:8098/buckets/s22555/keys/canada
+
+
+--------------------5---------------------------------------
+
+curl --ipv4 -i -XPUT -H "Content-Type: application/json" -d '{"country": "United States of America", "capital": "Waszyngton", "population": 331449281, "area": 3796742}' http://localhost:8098/buckets/s22555/keys/usa
+
+
+--------------------6---------------------------------------
+
+curl -i -XDELETE http://localhost:8098/buckets/s22555/keys/russia
+
+
+--------------------7---------------------------------------
+
+curl -i -XGET http://localhost:8098/buckets/s22555/keys/russia
+
+
+--------------------8---------------------------------------
+
+curl -i -XPOST -H "Content-Type: application/json" -d '{ "country": "Poland"}' http://localhost:8098/buckets/s22555/keys
+
+
+--------------------9---------------------------------------
+
+curl -i -XGET  http://localhost:8098/buckets/s22555/keys?keys=true
+curl -i -XGET  http://localhost:8098/buckets/s22555/keys/Fz6DPoMcgMduxVN6MgtvEvWVqP7
+
+
+--------------------10---------------------------------------
+
+curl -i -XDELETE  http://localhost:8098/buckets/s22555/keys/Fz6DPoMcgMduxVN6MgtvEvWVqP7

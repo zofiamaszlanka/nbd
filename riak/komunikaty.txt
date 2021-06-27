@@ -1,0 +1,23 @@
+create: 
+<Response [204]>
+
+get: 
+<Response [200]>
+brand=Spraindi&size=37&price=99
+
+update: 
+<Response [204]>
+
+get: 
+<Response [200]>
+brand=Spraindi&size=37&price=88
+
+delete: 
+<Response [204]>
+
+get: 
+<Response [404]>
+not found
+
+
+Process finished with exit code 0

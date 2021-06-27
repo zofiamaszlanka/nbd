@@ -1,0 +1,66 @@
+1.
+	MATCH p=shortestPath((darjeeling:town {name:"Darjeeling"})-[*]-(sandakphu:peak {name:"Sandakphu"}))
+	RETURN p
+
+2.
+	MATCH p=shortestPath((darjeeling:town {name:"Darjeeling"})-[*]-(sandakphu:peak {name:"Sandakphu"}))
+	WHERE ALL(r in relationships(p) WHERE r.winter= 'true')
+	RETURN p
+
+3.
+	MATCH p=(darjeeling:town {name:"Darjeeling"})-[*]->(sandakphu:peak {name:"Sandakphu"})
+	WITH reduce(result=0, r IN relationships(p) | result + r.distance) AS dist, p
+	ORDER BY dist
+	RETURN p, dist
+
+4.
+	MATCH (airport:Airport)<-[:ORIGIN]-(flight:Flight)
+	WITH airport, COUNT(flight) AS no_flights 
+	RETURN airport, no_flights 
+	ORDER BY no_flights DESC
+--5.
+
+	MATCH (airport:Airport)
+	WHERE airport.name <> 'LAX'
+	MATCH flight = (airport1:Airport { name:"LAX" })<-[:ORIGIN]-()-[*]->(airport2: Airport)
+	WHERE REDUCE(total_price = 0, x IN [node IN NODES(flight) WHERE 'Flight' IN LABELS(node)] | total_price + [(x)<-[:ASSIGN]-(ticket) | ticket.total_price][0] ) < 3000
+	RETURN airport,flight
+
+--6.
+	MATCH p = (la:Airport{name : "LAX"})<-[:ORIGIN]-(f:Flight)-[*]->(dayton: Airport{name: "DAY"})
+	WITH p, REDUCE(t_prices = 0, r IN relationships(p) | t_prices + r.price) AS price
+	RETURN p, price
+	ORDER BY price DESC
+
+
+--7.
+
+	MATCH p = (la:Airport{name : "LAX"})<-[:ORIGIN]-(f:Flight)-[*]->(dayton: Airport{name: "DAY"})
+	WITH p, REDUCE(t_prices = 0, r IN relationships(p) | t_prices + r.price) AS price
+	RETURN p, price
+	ORDER BY price ASC
+	LIMIT 1
+
+
+--8.
+	MATCH p = (la:Airport{name : "LAX"})<-[:ORIGIN]-(f:Flight)-[:ASSIGN]-(ticket: Ticket{class: "business"})-[*]->(dayton: Airport{name: "DAY"})
+	WITH p, REDUCE(t_prices = 0, r IN relationships(p) | t_prices + r.price) AS price
+	RETURN p, price
+	ORDER BY price ASC
+	LIMIT 1
+
+
+9.
+	MATCH (airport1:Airport)<-[:ORIGIN]-(flight:Flight)-[:DESTINATION]->(airport2:Airport)
+	UNWIND [airport1, airport2] as connection
+	RETURN flight, flight.airline, count(distinct connection) 
+
+
+10.
+
+	MATCH p = (airport1:Airport)<-[:ORIGIN]-(flight1:Flight)-[:DESTINATION]->(airport2:Airport)<-[:ORIGIN]-(flight2:Flight)-[:DESTINATION]->(airport3:Airport)
+	WITH reduce(total_price=0, r IN relationships(p) | total_price + r.price) AS price, p
+	ORDER BY price ASC
+  	WHERE  airport1.name <> airport2.name AND airport1.name <> airport3.name AND airport2.name <> airport3.name
+	RETURN p, price
+	LIMIT 1
